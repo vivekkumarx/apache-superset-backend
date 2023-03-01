@@ -1,6 +1,7 @@
 import express from 'express'
 import fetch from 'node-fetch'
 import * as dotenv from 'dotenv'
+import cors from 'cors'
 
 dotenv.config()
 
@@ -14,6 +15,7 @@ const GUEST_USER_FIRST_NAME = process.env.GUEST_USER_FIRST_NAME
 const GUEST_USER_LAST_NAME = process.env.GUEST_USER_LAST_NAME
 
 const app = express()
+app.use(cors())
 
 async function fetchAccessToken() {
   try {
